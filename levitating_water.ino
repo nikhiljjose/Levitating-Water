@@ -14,10 +14,10 @@ const int bluepin = 11;
 // use addLeds once for each strip
 void setup() {
   // tell FastLED that there is 10 leds on pin 3, must use PWM pin
-  FastLED.addLeds<WS2812B, 3>(leds, NUM_LEDS_PER_STRIP);
+  FastLED.addLeds<WS2811, 3>(leds, NUM_LEDS_PER_STRIP);
 
   // tell FastLED that there is 10 leds on pin 5, must use PWM pin
-  FastLED.addLeds<WS2812B, 5>(leds, NUM_LEDS_PER_STRIP);
+  FastLED.addLeds<WS2811, 5>(leds, NUM_LEDS_PER_STRIP);
   // repeat as needed if using more strips
 
   pinMode(redpin, INPUT);
