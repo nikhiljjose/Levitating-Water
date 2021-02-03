@@ -73,10 +73,10 @@ void loop() {
 
 
   int y = map (analogRead(1), 0, 1023, 500, 1000); //measures the pot that is connected to analog A1. Returns value 0-1023
-  // need to convert between (0,1023) to acceptable microseconds so that it strobes at the correct frequency
+  // convert between (0,1023) to acceptable microseconds so that it strobes at the correct frequency
   strobeMs = y;
   
-  uint32_t ms = micros(); // may have to use micros(). however micros() will overflow after over an hour compared to after 50 days with millis()
+  uint32_t ms = micros(); // may have to use micros() instead of millis(). however micros() will overflow after over an hour compared to after 50 days with millis()
   if (ms - lastStrobeMs >= strobeMs) {
     fill_solid(leds, NUM_LEDS_PER_STRIP, isOn ? CRGB::Black : CRGB::White);
     isOn = !isOn;
